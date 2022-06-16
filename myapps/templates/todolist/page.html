@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+			{% load static %}
+	<html lang="en">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon"href="{% static 'favicon.ico' %}">
+
+	<title>To Do List</title>
+	<style type="text/css">
+
+
+
+		*
+		{
+			box-sizing: border-box;
+			margin: 0;
+			font-family: 'Times-New-Roman';
+		}
+
+		body
+		{
+			display: flex;
+			min-height: 100vh;
+		}
+
+		h1
+		{
+			text-align: left;
+			margin: 5px;
+			padding-left: 1em;
+		}
+		.bg-img
+		{
+
+		  background-image: url("{% static "images/2.jpg"%}");
+		  top:0;
+		  left:0;
+		  right:0;
+		  bottom:0;
+		  position:absolute;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		}
+
+		.container
+		{
+			  position: absolute fixed;
+			  border-radius: 4px;
+			  margin: 5em;
+			  min-width: 50em;
+			  padding: 3em;
+			  min-height: 48vh;
+			  background-color: white;
+			  text-align: center;
+			  margin-top: 7.5em;
+			  overflow: scroll;
+		}
+
+		.navbar
+		{
+			  overflow: hidden;
+			  background-color: black;
+			  position: fixed;
+			  top: 0;
+			  width: 100%;
+			  opacity: 0.7;
+		}
+
+		.navbar a 
+		{
+			  float: right;
+			  display: block;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+		}
+
+		.navbar a:hover 
+		{
+			  background: #ddd;
+			  color: black;
+		}
+		.navbar a:active 
+		{
+			  background: #ddd;
+			  color: black;
+		}
+		.bg-img
+		{
+			display: flex;
+			justify-content: center;
+		}
+
+		.new-task-input
+		{
+			width: 80%;
+			padding: 1em;
+		}
+		input::placeholder
+		{
+		    font-size: 15px;
+		}
+
+		ul
+		{
+			width: 94%;
+			list-style: none;
+			text-align: left;
+
+		}
+
+		li
+		{
+			display: flex;
+			border: 1px solid gray;
+			justify-content: space-between;
+			margin-bottom: 10px;
+			padding: 0.7em;
+
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="bg-img">
+	<div class="navbar">
+		{% if user.is_authenticated %}
+			<a href="/todolist" style="float: left;">To Do List</a>
+			<a href="/logout">Sign out</a>
+		{% else %}
+			<a href="/index" style="float: left;">To Do List</a>
+			<a href="/register">Sign up</a>
+			<a href="/login">Sign in</a>
+		{% endif %}
+	</div>
+	
+	
+
+		<div id=todolist class="container" >
+		
+
+		 <!---iterating through all items to display them-->
+
+		<!---add item to list--->
+		<h1>Your To do list</h1>
+		<br>
+		<form action="/addItem/" method="post">
+				{% csrf_token %}
+				<input type="text" name="content" placeholder="New Task" class="new-task-input" required>
+				<input type="submit" value="+" style="width: 7.5%; padding: 1em;">	
+
+		</form>
+
+		<br>
+		<ul>
+		    {% for i in all_items %} 
+		    <li>
+		    	{{i.content}}
+		    	<!---delete item from list--->
+				<form action="/deleteItem/{{i.id}}/" method="post">
+					{% csrf_token %}
+					<input type="image" src='{% static "images/trash.png"%}' style="text-align: right; height: 25px; width: 25px;">	
+
+				</form>
+		    </li>
+		    {% endfor %}
+		</ul> 
+	</div>
+	</div>
+
+
+</body>
+</html>
