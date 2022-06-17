@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-			{% load static %}
+	{% load static %}
 	<html lang="en">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon"href="{% static 'favicon.ico' %}">
 
-	<title>To Do List</title>
+	<title>Your Profile</title>
 	<style type="text/css">
 
 
@@ -116,14 +116,9 @@ a
 	
 	<div class="container">
 
-		
-		 <!---iterating through all items to display them-->
-
-		<!---add item to list--->
-		<h2>To do list</h2>
+		<h2>{{user}}</h2>
 		<br>
-		<p>Don't have an account? <a href="/register"> Sign up</a></p>
-		<p>Already have an account? <a href="/login"> Sign in</a></p>
+
 		
 	</div>
 	</div>

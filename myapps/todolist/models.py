@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.conf import settings
 # Create your models here.
 
-class Todolistitem(models.Model):
-	content = models.CharField(max_length=100)
 
 class TodoItem(models.Model):
     name = models.CharField(max_length=100)
