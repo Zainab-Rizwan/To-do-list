@@ -2,12 +2,12 @@
 A Django application for productivity enthusiasts to create to do lists and help you get organised.
 
 ## Contents of this file
-- [Run the project](#run-the-project)
+- [Running the project](#run-the-project)
 - [UI](#ui)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 
-## Run the project
+## Running the project
 To run the project locally
 
 Clone the project
