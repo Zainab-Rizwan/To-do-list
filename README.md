@@ -1,23 +1,11 @@
 # To-do-list
+A Django application for productivity enthusiasts to create to do lists and help you get organised.
 
 ## Contents of this file
-- [Introduction](#introduction)
+- [Run the project](#run-the-project)
+- [UI](#ui)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Run the project](#run-the-project)
-
-## Introduction
-A Django application to store your lists.
-
-## Features
-- User Registration & Authentication
-- Create Tasks
-- Update Tasks
-- Delete Tasks
-
-## Tech Stack
-- Langauges: HTML, CSS, Bootstrap, Javascript, Python
-- Framework: Django
 
 ## Run the project
 To run the project locally
@@ -57,10 +45,26 @@ Start the server
   python manage.py runserver
 ```
 
-## Screenshots
+## UI
+![UI](https://user-images.githubusercontent.com/76821973/174487074-e9a23438-cec3-45aa-b41b-c464306d818e.png)
 
 
-## Demo
+## Features
+- User Registration & Authentication
+- Create Tasks
+- Update Tasks
+- Delete Tasks
+
+## Tech Stack
+- Langauges: HTML, CSS, Bootstrap, Javascript, Python
+- Framework: Django
+
+
+
+
+
+
+
 
 
 
