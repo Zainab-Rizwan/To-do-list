@@ -1,5 +1,5 @@
 # To-do-list
-A Django application for productivity enthusiasts to create to do lists and help you get organised.
+A CRUD Django application for productivity enthusiasts to create to do lists and help you get organised.
 
 ## Contents of this file
 - [Running the project](#run-the-project)
