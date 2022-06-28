@@ -1,3 +1,0 @@
-Django==3.2.8
-todolist==0.6.0
-users==1.0.dev0
